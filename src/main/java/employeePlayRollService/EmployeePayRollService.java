@@ -137,4 +137,19 @@ public class EmployeePayrollService {
 			return new EmployeePayrollFileIOService().countEntries();
 		return 0;
 	}
+	
+	/**
+	 * created method readData from Employee Payroll Service to read the Employee
+	 * Payroll File
+	 * 
+	 * @param ioService
+	 * @return Employee Payroll Data List
+	 */
+	public List<EmployeePayrollData> readData(IOService ioService) {
+		if (ioService.equals(IOService.FILE_IO))
+			return new EmployeePayrollFileIOService().readData();
+		else
+			return null;
+	}
+
 }
